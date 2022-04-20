@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button.js';
+import freeCodeCampLogo from './images/logo.png';
 
 function App() {
+
+  const clicManager = () =>{
+    console.log('clic');
+  }
+
+  const resetCounter = () =>{
+    console.log('restart');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='freecodecamp-logo-container'>
+        <img 
+          className='freecodecamp-logo'
+          src={freeCodeCampLogo}
+          alt='Logo freecodecamp' />
+      </div>
+      <div className='container-counter'>
+        <Button 
+          text='Clic'
+          buttonClic={true}
+          clicManager={clicManager} />
+        <Button 
+          text='Restart'
+          buttonClic={false}
+          clicManager={resetCounter} />
+      </div>
     </div>
   );
 }
